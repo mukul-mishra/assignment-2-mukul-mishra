@@ -21,5 +21,21 @@ public class MyBinarySearchTree {
     }
 
     private void insertRec(TreeNode latestRoot, TreeNode node) {
+        if ( latestRoot.value > node.value) {
+            if ( latestRoot.left == null ) {
+                latestRoot.left = node;
+            }
+            else {
+                insertRec(latestRoot.left, node);
+            }
+        }
+        else{
+            if (latestRoot.right == null) {
+                latestRoot.right = node;
+            }
+            else{
+                insertRec(latestRoot.right, node);
+            }
+        }
     }
 }
