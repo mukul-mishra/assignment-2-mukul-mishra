@@ -38,4 +38,19 @@ public class MyBinarySearchTree {
             }
         }
     }
+    public void printPreOrder() {
+        printPreOrderRec(root);
+        System.out.println("");
+        System.out.print(c);
+    }
+    int i = 1;
+    private void printPreOrderRec(TreeNode currentRoot) {
+        if(currentRoot==null) {
+            return;
+        }
+        System.out.println(i + " element::" +  currentRoot.value );
+        i++;
+        printPreOrderRec(currentRoot.left);
+        printPreOrderRec(currentRoot.right);
+    }
 }
