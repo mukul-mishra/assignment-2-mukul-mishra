@@ -53,4 +53,18 @@ public class MyBinarySearchTree {
         printRec(currentRoot.left);
         printRec(currentRoot.right);
     }
+    public void printPostorder() {
+        printPostOrderRec(root);
+        System.out.println("");
+    }
+    int j = 1;
+    private void printPostOrderRec(TreeNode currRoot) {
+        if (currRoot == null) {
+            return;
+        }
+        printPostOrderRec(currRoot.left);
+        printPostOrderRec(currRoot.right);
+        System.out.println(j + " element::" + currRoot.value );
+        j++;
+    }
 }
